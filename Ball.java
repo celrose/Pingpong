@@ -3,7 +3,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 public class Ball {
-    
+    //created the ball with it's size and starting position
     private static final int DIAMETER = 15;
     boolean collision = true;
     int x = 115;
@@ -15,7 +15,7 @@ public class Ball {
     public Ball(Game game) {
         this.game = game;
     }
-
+    //movement of the ball is here
     void move() throws InterruptedException{
         boolean changeDirection = true;
         if (x + xa < 0)
@@ -44,7 +44,7 @@ public class Ball {
             game.racquet1.y = 330;
             game.racquet2.y = 70;
         }
-
+        //using rectangle to rectangle collision to determine whether or not players have hit the ball
         else if (collision1()){
             collision = true;
             ya = -game.speed;
@@ -71,7 +71,7 @@ public class Ball {
     private boolean collision2() {
         return game.racquet2.getBounds().intersects(getBounds());
     }
-
+    //ball specification, color and if it is filled or not
     public void paint(Graphics2D g) {
     	g.setColor(Color.BLACK);
         g.fillOval(x, y, DIAMETER, DIAMETER);
