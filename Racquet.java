@@ -29,11 +29,11 @@ public class Racquet
         g.setColor(Color.BLACK);
         g.fillRect(x, y, WIDTH, HEIGHT);
     }
-    
+    //keyevent for the racquet for it to be able to move
     public void keyReleased(KeyEvent e) {
         xa = 0;
     }
-
+    //move left  and right only since those are the only directions the racquet can move
     public void moveLeft() {
         xa = -game.speed;
     }
@@ -41,7 +41,7 @@ public class Racquet
     public void moveRight() {
         xa = game.speed;
     }
-
+    //collision detection for the rectangles
     public Rectangle getBounds() {
         return new Rectangle(x, y, WIDTH, HEIGHT);
     }
