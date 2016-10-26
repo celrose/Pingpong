@@ -25,11 +25,11 @@ public class Game extends JPanel {
     Racquet racquet2 = new Racquet(this, 150, 50);
 
     public int speed = 1;
-
+    //getting the score and converting it into a toString format
     private String getScore() {
         return String.format("%d - %d", score1, score2);
     }
-
+    //constructor for the game to get the keyevents
     public Game() {
         addKeyListener(new KeyListener() {
             @Override
@@ -60,7 +60,7 @@ public class Game extends JPanel {
         setFocusable(true);
         score1 = score2 = 0;
     }
-
+    //ball, racquet movement
     private void move() throws InterruptedException{
         ball.move();
         racquet1.move();
@@ -68,6 +68,7 @@ public class Game extends JPanel {
     }
 
     @Override
+    //here is where we draw the shapes of our game
     public void paint(Graphics g) {
         super.paint(g);
 
@@ -103,7 +104,7 @@ public class Game extends JPanel {
         JOptionPane.showMessageDialog(this, "Player 1:" + score1 +  "\n Player 2:" + score2,
                 "Game Over", JOptionPane.YES_NO_OPTION);
     }
-
+    //main game loop
     public void play() throws InterruptedException{
         while (true) {
             move();
