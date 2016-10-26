@@ -63,11 +63,11 @@ public class Ball {
         x = x + xa;
         y = y + ya;
     }
-
+    //ifthe ball has collided with the first racquet, the x y coordinates for the movement of the ball are changed
     private boolean collision1() { 
     	return game.racquet1.getBounds().intersects(getBounds());
     }
-
+    //ifthe ball has collided with the second racquet, the x y coordinates for the movement of the ball are changed
     private boolean collision2() {
         return game.racquet2.getBounds().intersects(getBounds());
     }
@@ -76,7 +76,7 @@ public class Ball {
     	g.setColor(Color.BLACK);
         g.fillOval(x, y, DIAMETER, DIAMETER);
     }
-
+    //getting the bounds to determine collision or not
     public Rectangle getBounds() {
         return new Rectangle(x, y, DIAMETER, DIAMETER);
     }
